@@ -1,0 +1,30 @@
+{
+  "name": "@omokolataiwo/custom-error",
+  "version": "0.1.1",
+  "description": "Node custom error with handler that does not get in your way. Pretty what you are used to. :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omokolataiwo/custom-error.git"
+  },
+  "keywords": [
+    "Custom",
+    "Error",
+    "Error",
+    "Handler",
+    "Error",
+    "Logger",
+    "Handler",
+    "Log",
+    "Error"
+  ],
+  "author": "Taiwo Kolawole",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omokolataiwo/response-error/issues"
+  },
+  "homepage": "https://github.com/omokolataiwo/response-error#readme"
+}
