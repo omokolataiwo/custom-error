@@ -1,6 +1,6 @@
 {
   "name": "@omokolataiwo/custom-error",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Node custom error with handler that does not get in your way. Pretty what you are used to. :). The idea is that it should be simple to use without complex initailization and configuration.",
   "main": "lib/entry.js",
   "scripts": {
@@ -29,12 +29,13 @@
     "url": "https://github.com/omokolataiwo/response-error/issues"
   },
   "homepage": "https://github.com/omokolataiwo/response-error#readme",
-  
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1"
   },
   "babel": {
-    "presets": ["@babel/env"]
+    "presets": [
+      "@babel/env"
+    ]
   }
 }
