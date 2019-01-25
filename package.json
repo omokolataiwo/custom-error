@@ -1,6 +1,6 @@
 {
   "name": "@omokolataiwo/custom-error",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node custom error with handler that does not get in your way. Pretty what you are used to. :). The idea is that it should be simple to use without complex initailization and configuration.",
   "main": "lib/entry.js",
   "scripts": {
