@@ -9,11 +9,16 @@ export default class ErrorHandler {
       throw new Error('Invalid server response type');
     }
   }
-  handle(error, writeToFile=true) {
-    if (error instanceof CustomError && !error.isServerError()) {
+  handle(error, callback) {
+    const isCustomError = error instanceof CustomError;
+    if (isCustomError && !error.isServerError()) {
       return this.response.status(error.code).json({ error: error.message });
     }
-    writeToFile && this.writeErrorMessageToFile();
+    if (callback && typeof callback === 'function') {
+      callback(error.message);
+    } else {
+      // asynchronously write to file.
+    }
     return this.response.status(500).json({ error: 'Internal Server Error.' });
   }
   writeErrorMessageToFile() {

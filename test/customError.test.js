@@ -18,10 +18,6 @@ describe('CustomError', () => {
   it('must have error message', () => {
     assert.throws(() => new CustomError(400), 'Error message not provided.');
   });
-  it('must have a default error message for error code within 500', () => {
-    const instance = new CustomError();
-    assert.equal(instance.message, 'Internal Server Error.');
-  });
   it('must not allow invalid error code', () => {
     assert.throws(() => new CustomError(20, 'Fake error code'), 'Invalid error code provided.');
   });

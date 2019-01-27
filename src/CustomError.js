@@ -14,6 +14,10 @@ export class CustomError extends Error {
    */
   constructor(code = 500, message, ...args) {
     super(args);
+
+    this.message = message;
+    this.code = code;
+
     // must have a valid message
     if (!this.isStringOrJSON(message) && !(code >= 500)) {
       throw new Error('Error message not provided.');
@@ -23,15 +27,6 @@ export class CustomError extends Error {
     }
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, CustomError);
-    }
-
-    this.message = message;
-    this.code = code;
-    this.date = new Date();
-    // Do not expose the main cause of server error to the public for security reasons
-    if (this.isServerError(code)) {
-      this.cause = this.message;
-      this.message = 'Internal Server Error.';
     }
   }
   /**
@@ -52,8 +47,8 @@ export class CustomError extends Error {
    * @returns {boolean}
    * @memberof CustomError
    */
-  isServerError(code) {
-    return [500, 501].includes(code);
+  isServerError() {
+    return [500, 501].includes(this.code);
   }
   /**
    * Check if error message is a type of string or JSON object
