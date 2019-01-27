@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src --out-dir lib",
     "prepublish": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r @babel/register ./test/**/**.test.js --exit"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,11 @@
   "homepage": "https://github.com/omokolataiwo/response-error#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1"
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "mockery": "^2.1.0"
   },
   "babel": {
     "presets": [
